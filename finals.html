@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Page - Calaguas</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo"/>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">My Booking</a></li>
+        <li><a href="#">Sign in</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeLogin()">&times;</span>
+    <h2>Login</h2>
+    <form>
+      <input type="text" placeholder="Username" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+      </div>
+
+    <section class="carousel">
+    <div class="slides">
+        <img src="beach1.jpg" class="slide active" alt="Beach 1">
+        <img src="beach2.jpg" class="slide" alt="Beach 2">
+        <img src="beach3.jpg" class="slide" alt="Beach 3">
+    </div>
+  </section>
+
+  <section class="booking-section">
+    <button class="book-now">Book Now</button>
+    <h2>Discover the World’s Hidden Wonders</h2>
+    <p>Lorem ipsum dolor amet</p>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="plane.webp" alt="Flight"/>
+        </div>
+        <div class="card-content">
+          <h3>Book a Flight</h3>
+          <p>Book international and domestic flight</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="hotel.jpg" alt="Hotel"/>
+        </div>
+        <div class="card-content">
+          <h3>Book a Hotel</h3>
+          <p>Book international and domestic hotel</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="plane.webp" alt="Tour"/>
+        </div>
+        <div class="card-content">
+          <h3>Book a Tour</h3>
+          <p>Book international and local tours</p>
+        </div>
+      </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; background: #fff7cc; color: #086788;">
+        <p>&copy; 2025 ATT Travel and Tours. All rights reserved.</p>
+    </footer>
+
+  </section>
+</body>
+</html>
