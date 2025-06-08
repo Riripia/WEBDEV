@@ -6,8 +6,75 @@
 }
 
 body {
-    background: url('beach.jpg') center center/scroll no-repeat;
+    background: url('page1.jpg') center center/scroll no-repeat;
     background-color: #fdf2d8;
+}
+
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 10000;
+  align-items: center; justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  width: 350px;
+  position: relative;
+}
+.close {
+  position: absolute; top: 10px; right: 15px;
+  font-size: 1.5rem; cursor: pointer;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.tabs button.active {
+  background: #086788;
+  color: #fff;
+}
+
+/* Forms */
+.form-container { display: none; }
+.form-container.active { display: block; }
+.hidden { display: none!important; }
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.modal-content input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modal-content button[type="submit"] {
+  background: #086788;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.modal-content button[type="submit"]:hover {
+  background: #f26419;
 }
 
 header {
@@ -45,7 +112,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    min-height: 100vh; /* Allows section to grow with content */
+    min-height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,8 +126,42 @@ nav ul li a:hover {
     text-shadow: 2px 2px 4px #000;
 }
 
+/*Carousel*/
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+/*Booking*/
 .booking-section {
-    background-color: #fff2d2;
+    background: url('page1.jpg') no-repeat center center/cover;
     text-align: center;
     padding: 50px 20px;
     margin-top: 40px;
@@ -96,6 +197,7 @@ nav ul li a:hover {
     color: #086788;
 }
 
+/*TOUR CARDS*/
 .cards {
     display: flex;
     justify-content: center;
@@ -105,7 +207,7 @@ nav ul li a:hover {
 }
 
 .card {
-    background: #f0c808;
+    background: #fff2b0;
     border-radius: 25px;
     overflow: hidden;
     width: 200px;
@@ -145,7 +247,7 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     border-radius: 22.5px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, #f0c808 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, #fff2b0 100%);
     pointer-events: none;
 }
 
@@ -166,4 +268,202 @@ nav ul li a:hover {
     font-size: 13px;
     color: #086788;
     margin-top: 5px;
+}
+
+.inquiries {
+  background-color: #086788;
+  padding: 50px 20px;
+  margin-top: 40px;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.inquiry-form textarea {
+  grid-column: span 2;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.inquiry-form button {
+  background-color: #dd1c1a;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  grid-column: span 2;
+}
+
+.inquiry-form button:hover {
+  background-color: #f26419;
+}
+
+.reviews-section {
+  background: #fff7cc;
+  padding: 60px 20px;
+  text-align: center;
+}
+.reviews-section h2 { color: #086788; margin-bottom: 30px; font-size: 2.5rem; }
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+.review {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.review img {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.review-text {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 10px;
+}
+.review-author {
+  font-weight: bold;
+  color: #086788;
+}
+
+.feedback-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.feedback-form input,
+.feedback-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #086788;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+}
+.feedback-form button {
+  background: #086788;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.feedback-form button:hover { background: #f26419; }
+
+/* Responsive Layout */
+@media (min-width: 700px) {
+  .reviews-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-section {
+    padding: 40px 10px;
+  }
+}
+
+/*recommended for you
+
+.recommended .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Card inner image */
+.recommended .card-img-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.recommended .card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content & Buttons */
+.recommended .card-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recommended .card-content h3 {
+  margin: 0 0 10px;
+  color: #086788;
+}
+
+.recommended .card-content p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.recommended .card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.recommended .card-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recommended .card-actions .btn-book {
+background-color: #dd1c1a;
+  color: white;
+}
+.recommended .card-actions .btn-book:hover {
+  background-color: #f26419;
 }
