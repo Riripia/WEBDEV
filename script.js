@@ -59,3 +59,6 @@ function prevSlide() {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   showSlide(currentSlide);
 }
+console.log(trigger, modal, closeBtn);
+/*SERVICES*/
+
